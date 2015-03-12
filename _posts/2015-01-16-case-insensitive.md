@@ -51,10 +51,10 @@ config.MapODataServiceRoute("odata", "odata", edmModel);
 For example:
 
 Origin call:
-* ~/odata/Customers/Default.BoundFuncWithEnumParameters(SimpleEnum=1,FlagsEnum=One, Four)
+* ~/odata/Customers/Default.GetCustomerByGender(gender=System.Web.OData.TestCommon.Models.Gender'Male')
 
 Now, you can call as:
-* ~/odata/Customers/Default.BoundFuncWithEnumParameters(SimpleEnum='1', FlagsEnum='One, Four')
+* ~/odata/Customers/Default.GetCustomerByGender(gender='Male')
 
 #### Advance Usage
 User can configure as below to support case insensitive & unqualified function call & Enum Prefix free:
