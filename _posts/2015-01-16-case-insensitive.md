@@ -51,13 +51,13 @@ config.MapODataServiceRoute("odata", "odata", edmModel);
 For example:
 
 Origin call:
-```C#
+{% highlight csharp %}
 * ~/odata/Customers/Default.GetCustomerByGender(gender=System.Web.OData.TestCommon.Models.Gender'Male')
-```
+{% endhighlight %}
 Now, you can call as:
-```C#
+{% highlight csharp %}
 * ~/odata/Customers/Default.GetCustomerByGender(gender='Male')
-```
+{% endhighlight %}
 #### Advance Usage
 User can configure as below to support case insensitive & unqualified function call & Enum Prefix free:
 
