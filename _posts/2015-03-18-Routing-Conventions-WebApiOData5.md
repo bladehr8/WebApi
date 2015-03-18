@@ -32,13 +32,14 @@ For routing, the important part is the resource path. The resource path is divid
 
 So this path picks out the supplier of product 1.
 
-** OData path segments do not always correspond to URI segments. For example, “1” is considered a path segment. **
+**OData path segments do not always correspond to URI segments. For example, “1” is considered a path segment.**
 
 ** Controller Names. ** The controller name is always derived from the entity set at the root of the resource path. For example, if the resource path is /Products(1)/Supplier, Web API looks for a controller named ProductsController.
 
-** Action Names. ** Action names are derived from the path segments plus the entity data model (EDM), as listed in the following tables. In some cases, you have two choices for the action name. For example, “Get” or "GetProducts".
+**Action Names.** Action names are derived from the path segments plus the entity data model (EDM), as listed in the following tables. In some cases, you have two choices for the action name. For example, “Get” or "GetProducts".
 
-** Querying Entities **
+**Querying Entities**
+
 Request | Example URI | Action Name | Example Action
 ------------ | ------------- | ------------- | -------------
 GET /entityset | /Products | GetEntitySet or Get | GetProducts
@@ -57,19 +58,19 @@ PATCH /entityset(key)/cast| /Products(1)/Models.Book | PatchEntityType or Patch 
 DELETE /entityset(key) | /Products(1) | DeleteEntityType or Delete | DeleteProduct
 DELETE /entityset(key)/cast | /Products(1)/Models.Book | DeleteEntityType or Delete | DeleteBook
 
-** Querying a Navigation Property **
+**Querying a Navigation Property**
 
 Request | Example URI | Action Name | Example Action
 ------------ | ------------- | ------------- | -------------
 GET /entityset(key)/navigation | /Products(1)/Supplier | GetNavigationFromEntityType or GetNavigation | GetSupplierFromProduct
 GET /entityset(key)/cast/navigation | /Products(1)/Models.Book/Author | GetNavigationFromEntityType or GetNavigation | GetAuthorFromBook
 
-** Querying, Creating and Deleting Links **
+**Querying, Creating and Deleting Links**
 
 Request | Example URI | Action Name
 ------------ | ------------- | -------------
 GET /entityset(key)/navigation/$ref | /Products(1)/Supplier/$ref | GetRef
-GET /entityset(key)/cast/navigation/$ref | /Products(1)/Models.Book/Author/$ref | GetRef
+GET /entityset(key)/cast/navigation/$ref | /Products(1)/Models.Book/Author/\$ref | GetRef
 POST /entityset(key)/navigation/$ref | /Products(1)/Supplier/$ref | CreateRef
 POST /entityset(key)/cast/navigation/$ref | /Products(1)/Models.Book/Author/$ref | CreateRef
 PUT /entityset(key)/navigation/$ref | /Products(1)/Supplier/$ref | CreateRef
@@ -79,13 +80,14 @@ DELETE /entityset(key)/cast/navigation/$ref | /Products(1)/Models.Book/Author/$r
 DELETE /entityset(key)/navigation(relatedKey)/$ref | /Products(1)/Supplier(1)/$ref | DeleteRef
 DELETE /entityset(key)/cast/navigation(relatedKey)/$ref | /Products(1)/Models.Book/Author(1)/$ref | DeleteRef
 
-** Properties **
+**Properties**
+
 Request | Example URI | Action Name | Example Action
 ------------ | ------------- | ------------- | -------------
 GET /entityset(key)/property | /Products(1)/Name | GetPropertyFromEntityType or GetProperty | GetNameFromProduct
 GET /entityset(key)/cast/property | /Products(1)/Models.Book/Author | GetPropertyFromEntityType or GetProperty | GetTitleFromBook
 
-** Actions **
+**Actions**
 
 Request | Example URI | Action Name | Example Action
 ------------ | ------------- | ------------- | -------------
@@ -94,7 +96,7 @@ POST /entityset(key)/cast/action | /Products(1)/Models.Book/CheckOut | ActionNam
 POST /entityset/action | /Products/Rate | ActionNameOnCollectionOfEntityType or ActionName | RateOnCollectionOfProduct
 POST /entityset/cast/action | /Products/Models.Book/CheckOut | ActionNameOnCollectionOfEntityType or ActionName | CheckOutOnCollectionOfBook
 
-** Functions **
+**Functions**
 
 Request | Example URI | Action Name | Example Action
 ------------ | ------------- | ------------- | -------------
@@ -103,7 +105,7 @@ GET /entityset(key)/cast/function | /Products(1)/Models.Book/CheckOut | function
 GET /entityset/function | /Products/Rate | functionNameOnCollectionOfEntityType or functionName | RateOnCollectionOfProduct
 GET /entityset/cast/function | /Products/Models.Book/CheckOut | functionNameOnCollectionOfEntityType or functionName | CheckOutOnCollectionOfBook
 
-** Method Signatures **
+**Method Signatures**
 
 Here are some rules for the method signatures:
 
