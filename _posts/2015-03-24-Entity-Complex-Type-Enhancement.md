@@ -75,6 +75,8 @@ System.InvalidOperationException: The entity set or singlet on 'Animals' is base
 #### Complex type example
 
 Let's see an complex example. The CLR model is shown as below:
+
+{% highlight csharp %}
 public abstract class Graph
 { }
 
@@ -88,7 +90,7 @@ public class Line : Graph
 {
   public IList<Point> Vertexes { get; set; }
 }
-    
+{% endhighlight %}    
 We can use the following codes to build Edm Model:
 {% highlight csharp %}
   var builder = new ODataConventionModelBuilder();
