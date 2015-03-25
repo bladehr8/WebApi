@@ -13,7 +13,7 @@ Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.O
 5. Entity Reference
 6. Collection of above
 
-Let's see how to build and use the above type in function.
+Let's see how to build and use the above types in function.
 
 ### CLR Model
 
@@ -66,12 +66,12 @@ private static IEdmModel GetEdmModel()
 }
 {% endhighlight %}
 
-where, *BuildFunction()* is helper function in which functions can be built.
+where, *BuildFunction()* is a helper function in which functions can be built.
 
 ### Primitive and Collection of Primitive parameter
 
 #### Configuration
-In *BuildFunction()*, we can configure a function which accepts `Primitive` and collection of `Primitive` as parameters:
+In *BuildFunction()*, we can configure a function with `Primitive` and collection of `Primitive` parameters:
 {% highlight csharp %}
 var function = builder.EntityType<Customer>().Collection.Function("PrimtiveFunction").Returns<string>();
 function.Parameter<int>("p1");
@@ -100,7 +100,7 @@ We can invoke the function as:
 ### Enum and Collection of Enum parameter
 
 #### Configuration
-In *BuildFunction()*, we can configure a function which accepts `Enum` and collection of `Enum` as parameters:
+In *BuildFunction()*, we can configure a function with `Enum` and collection of `Enum` parameters:
 {% highlight csharp %}
 var function = builder.EntityType<Customer>().Collection.Function("EnumFunction").Returns<string>();
 function.Parameter<Color>("e1");
@@ -129,7 +129,7 @@ We can invoke the Enum function as:
 ### Complex and Collection of Complex parameter
 
 #### Configuration
-In *BuildFunction()*, we can configure a function which accepts `Complex` and collection of `Complex` as parameters:
+In *BuildFunction()*, we can configure a function with `Complex` and collection of `Complex` parameters:
 {% highlight csharp %}
 var function = builder.EntityType<Customer>().Collection.Function(ComplexFunction).Returns<string>();
 function.Parameter<Address>("c1");
@@ -157,13 +157,13 @@ We can invoke the complex function as:
 ### Entity and Collection of Entity parameter
 
 #### Configuration
-In *BuildFunction()*, we can configure a function which accepts `Entity` and collection of `Entity` as parameters:
+In *BuildFunction()*, we can configure a function with `Entity` and collection of `Entity` parameters:
 {% highlight csharp %}
 var function = builder.EntityType<Customer>().Collection.Function(EntityFunction).Returns<string>();
 function.EntityParameter<Customer>("a1");
 function.CollectionEntityParameter<Customer>("a2"); 
 {% endhighlight %}
-It's better to call `EntityParmeter<T>` and 'CollectionEntityParameter<T>` to define entity and collection of entity parameter.
+It's better to call `EntityParmeter<T>` and `CollectionEntityParameter<T>` to define entity and collection of entity parameter.
 
 #### Routing
 In the `CustomersController`, add the following method :
@@ -188,9 +188,10 @@ In fact, we can't build a function with entity reference as parameter. However, 
 {% highlight csharp %}
 ~/odata/Customers/Default.EntityFunction(a1=@x,a2=@y)?@x={\"@odata.id\":\"http://localhost/odata/Customers(2)\"}&@y={\"value\":[{\"@odata.id\":\"http://localhost/odata/Customers(2)\"},{\"@odata.id\":\"http://localhost/odata/Customers(3)\"}]}
 {% endhighlight %}
+
 ### FromODataUri
 
-'[FromODataUri]' is mandatory for complex, entity and all collection, however, it is optional for Primitive & Enum. For string, the value will contain single quotes without '[FromODataUri]'.
+'[FromODataUri]' is mandatory for complex, entity and all collection. However, it is optional for Primitive & Enum. But for string primitive type, the value will contain single quotes without '[FromODataUri]'.
 
 Thanks.
 
