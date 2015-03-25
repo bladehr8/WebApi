@@ -180,14 +180,14 @@ We can invoke the entity function as:
 {% highlight csharp %}
 ~/odata/Customers/Default.EntityFunction(a1=@x,a2=@y)?@x={\"@odata.type\":\"%23NS.Customer\",\"Id\":1,\"Name\":\"John\"}&@y={\"value\":[{\"@odata.type\":\"%23NS.Customer\",\"Id\":2, \"Name\":\"Mike\"},{\"@odata.type\":\"%23NS.SubCustomer\",\"Id\":3,\"Name\":\"Tony\", \"Price\":9.9}]}
 ~/odata/Customers/Default.EntityFunction(a1=@x,a2=@y)?@x=null&@y={\"value\":[]}
-
+{% endhighlight %}
 However, only parameter alias is supported for entity.
 
 ### Entity Reference and collection of Entity Reference parameter
 In fact, we can't build a function with entity reference as parameter. However, we can call the function with entity parameter using entity reference value. So, without any change for the `EntityFunction`, we can call as:
-
+{% highlight csharp %}
 ~/odata/Customers/Default.EntityFunction(a1=@x,a2=@y)?@x={\"@odata.id\":\"http://localhost/odata/Customers(2)\"}&@y={\"value\":[{\"@odata.id\":\"http://localhost/odata/Customers(2)\"},{\"@odata.id\":\"http://localhost/odata/Customers(3)\"}]}
-
+{% endhighlight %}
 ### FromODataUri
 
 '[FromODataUri]' is mandatory for complex, entity and all collection, however, it is optional for Primitive & Enum. For string, the value will contain single quotes without '[FromODataUri]'.
