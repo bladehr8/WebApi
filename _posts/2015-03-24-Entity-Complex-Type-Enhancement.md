@@ -74,7 +74,7 @@ System.InvalidOperationException: The entity set or singlet on 'Animals' is base
 
 #### Complex type example
 
-Let's see an complex example. The CLR model is shown as below:
+Let's see a complex example. The CLR model is shown as below:
 
 {% highlight csharp %}
 public abstract class Graph
