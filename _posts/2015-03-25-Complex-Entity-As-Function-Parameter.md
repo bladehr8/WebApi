@@ -195,3 +195,4 @@ In fact, we can't build a function with entity reference as parameter. However, 
 
 Thanks.
 
+For un-typed scenario, please refer to [untyped page](http://odata.github.io/WebApi/Function-Action-Parameter-In-Untyped-Scenario/).
