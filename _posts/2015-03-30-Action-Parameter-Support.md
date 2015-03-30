@@ -149,12 +149,12 @@ We can invoke the action by issuing a Post on `~/odata/Customers/Default.EntityA
 {% endhighlight %}
 
 
-### know issues
+### Know issues
 1. It doesn't work if "null" value in the collection of entity in the payload. See detail in [#100](https://github.com/OData/odata.net/issues/100).
 
 2. It doesn't work if anything else follows up the collection of entity in the payload. See detail in [#65](https://github.com/OData/odata.net/issues/65)
 
-### null value
+### Null value
 
 If you invoke an action with a 'null' action parameter value, please don't add the parameter (for example, `"p1":null`) in the payload and leave it un-specified. However, for collection, you should always specify it even the collection is an empty collection (for example, `"p1":[]`).
 
