@@ -131,7 +131,7 @@ We can invoke the Enum function as:
 #### Configuration
 In *BuildFunction()*, we can configure a function with `Complex` and collection of `Complex` parameters:
 {% highlight csharp %}
-var function = builder.EntityType<Customer>().Collection.Function(ComplexFunction).Returns<string>();
+var function = builder.EntityType<Customer>().Collection.Function("ComplexFunction").Returns<string>();
 function.Parameter<Address>("c1");
 function.CollectionParameter<Address>("c2");
 {% endhighlight %}
@@ -159,7 +159,7 @@ We can invoke the complex function as:
 #### Configuration
 In *BuildFunction()*, we can configure a function with `Entity` and collection of `Entity` parameters:
 {% highlight csharp %}
-var function = builder.EntityType<Customer>().Collection.Function(EntityFunction).Returns<string>();
+var function = builder.EntityType<Customer>().Collection.Function("EntityFunction").Returns<string>();
 function.EntityParameter<Customer>("a1");
 function.CollectionEntityParameter<Customer>("a2"); 
 {% endhighlight %}
