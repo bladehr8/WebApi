@@ -16,11 +16,11 @@ Let's see how to build and use the above types in action.
 
 ### CLR Model
 
-Re-use the CLR models in (function sample.)[http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/]
+Re-use the CLR models in [function sample](http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/).
 
 ### Build Edm Model
 
-Same as build Edm Model in (function sample.)[http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/], but change the helper function as *BuildAction()*.
+Same as build Edm Model in [function sample](http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/), but change the helper function as *BuildAction()*.
 
 ### Primitive and Collection of Primitive parameter
 
@@ -128,7 +128,7 @@ It's better to call `EntityParmeter<T>` and `CollectionEntityParameter<T>` to de
 #### Routing
 In the `CustomersController`, add the following method :
 {% highlight csharp %}
-[HttpGet]
+[HttpPost]
 public IHttpActionResult EntityAction(ODataActionParameters parameters)
 {
   ...
@@ -150,13 +150,14 @@ We can invoke the action by issuing a Post on `~/odata/Customers/Default.EntityA
 
 
 ### know issues
-1. It doesn't work if "null" value is in the payload of collection of entity. See [#100](https://github.com/OData/odata.net/issues/100)
+1. It doesn't work if "null" value in the collection of entity in the payload. See detail in [#100](https://github.com/OData/odata.net/issues/100).
 
-2. It doesn't work if anything else follows up the collection of entity in the payload. See [#65](Payload deserializer failed if another item following a feed.)
+2. It doesn't work if anything else follows up the collection of entity in the payload. See detail in [#65](https://github.com/OData/odata.net/issues/65)
 
 ### null value
 
 If you invoke an action with a 'null' action parameter value, please don't add the parameter (for example, `"p1":null`) in the payload and leave it un-specified. However, for collection, you should always specify it even the collection is an empty collection (for example, `"p1":[]`).
+
 Thanks.
 
 
