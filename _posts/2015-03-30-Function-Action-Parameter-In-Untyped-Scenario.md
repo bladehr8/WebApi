@@ -129,7 +129,7 @@ Here's the metadata document for this Edm Model:
       <Function Name="EnumFunction" IsBound="true">
         <Parameter Name="entity" Type="NS.Customer" />
         <Parameter Name="color" Type="NS.Address" />
-        <Parameter Name="colorList" Type="Collection(NS.Address)" />
+        <Parameter Name="colorList" Type="Collection(NS.Color)" />
         <ReturnType Type="Edm.Boolean" Nullable="false" />
       </Function>
       <Function Name="ComplexFunction" IsBound="true">
@@ -141,7 +141,7 @@ Here's the metadata document for this Edm Model:
       <Function Name="EntityFunction" IsBound="true">
         <Parameter Name="entity" Type="NS.Customer" />
         <Parameter Name="customer" Type="NS.Color" />
-        <Parameter Name="customerList" Type="Collection(NS.Color)" />
+        <Parameter Name="customerList" Type="Collection(NS.Customer)" />
         <ReturnType Type="Edm.Boolean" Nullable="false" />
       </Function>
       <Action Name="PrimitiveAction" IsBound="true">
@@ -153,7 +153,7 @@ Here's the metadata document for this Edm Model:
       <Action Name="EnumAction" IsBound="true">
         <Parameter Name="entity" Type="NS.Customer" />
         <Parameter Name="color" Type="NS.Address" />
-        <Parameter Name="colorList" Type="Collection(NS.Address)" />
+        <Parameter Name="colorList" Type="Collection(NS.Color)" />
         <ReturnType Type="Edm.Boolean" Nullable="false" />
       </Action>
       <Action Name="ComplexAction" IsBound="true">
@@ -165,7 +165,7 @@ Here's the metadata document for this Edm Model:
       <Action Name="EntityAction" IsBound="true">
         <Parameter Name="entity" Type="NS.Customer" />
         <Parameter Name="customer" Type="NS.Color" />
-        <Parameter Name="customerList" Type="Collection(NS.Color)" />
+        <Parameter Name="customerList" Type="Collection(NS.Customer)" />
         <ReturnType Type="Edm.Boolean" Nullable="false" />
       </Action>
       <EntityContainer Name="Default">
@@ -178,6 +178,7 @@ Here's the metadata document for this Edm Model:
 
 ### Controller & Routing
 Let's add the following methods into `CustomersController`:
+{% highlight csharp %}
 [HttpGet]
 public IHttpActionResult PrimitiveFunction(int key, int? param, [FromODataUri]IList<int?> paramList)
 {
@@ -227,7 +228,7 @@ public IHttpActionResult EntityAction(int key, ODataActionParameters parameters)
 {
     ......
 }
-
+{% endhighlight %}
 #### Request Samples
 
 Now, We can invoke the function with the entity and collection of entity parameter as:
@@ -246,7 +247,7 @@ Also, We can invoke the action by issuing a Post on `~/odata/Customers(1)/NS.Ent
 }
 {% endhighlight %}
 
-For other request samples, please see [Function page](http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/) and [Action page](http://odata.github.io/WebApi/Action-Parameter-Support/).
+For other request samples, please refer to [Function page](http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/) and [Action page](http://odata.github.io/WebApi/Action-Parameter-Support/).
 
 ### Unbound function/action
 
