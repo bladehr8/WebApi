@@ -54,7 +54,8 @@ Thanks.
 
 
 ----
-Notes for string parameter without using [FromODataUri] as: 
+Notes:
+For string parameter without using [FromODataUri] in the controller as:
 {% highlight csharp %}
 public class CustomersController : ODataController
 {
@@ -66,7 +67,7 @@ public class CustomersController : ODataController
 }
 {% endhighlight %}
 
-Then you invoke this function using the following parameters:
+Then you invoke this function using the following parameters and can get the parameter values as:
 
 1. ~/Customers(1)/Default.MyFunction(p='') 
     
