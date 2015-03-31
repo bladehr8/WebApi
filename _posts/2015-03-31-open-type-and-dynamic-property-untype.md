@@ -117,7 +117,7 @@ Url:
 Represent an entity.
 
 #### EdmComplexObject (Collection)
-Represent an complex dynamic property.
+Represent an complex property.
 
 #### EdmEnumObject (Collection)
-Represent an enum dynamic property.
+Represent an enum property.
