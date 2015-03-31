@@ -112,9 +112,12 @@ Url:
 {% endhighlight %}
 
 ### The type of dynamic properties in un-type scenario
+
 #### EdmEntityObject (Collection)
 Represent an entity.
+
 #### EdmComplexObject (Collection)
 Represent an complex dynamic property.
+
 #### EdmEnumObject (Collection)
 Represent an enum dynamic property.
