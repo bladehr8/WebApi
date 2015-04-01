@@ -1,7 +1,7 @@
 ---
 title : "Support complex, entity, entity reference and collection of them as function parameter"
 layout: post
-category: Function Parameter, V5.5
+category: [Operations, V5.5]
 ---
 
 Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as function parameter:
