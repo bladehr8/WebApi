@@ -1,7 +1,7 @@
 ---
 title : "Edm.Date & Edm.TimeOfDay Support in Web API OData V4"
 layout: post
-category: Edm Model Builder, V5.5
+category: [Edm Model Builder, V5.5]
 ---
 
 This sample introduces how to use the `Edm.Date` & `Edm.TimeOfDay` supported in Web API OData V5.5.
