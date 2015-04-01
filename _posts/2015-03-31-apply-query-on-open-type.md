@@ -1,7 +1,7 @@
 ---
 title : "Support dynamic property in $filter, $select and $orderby"
 layout: post
-category: open-type, V5.5
+category: [Open-type, V5.5]
 ---
 
 Since Web API OData V5.5, it supports filter, select and orderby on dynamic properties.
