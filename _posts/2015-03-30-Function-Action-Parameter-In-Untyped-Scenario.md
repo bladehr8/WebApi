@@ -1,7 +1,7 @@
 ---
 title : "Function/Action parameter - untyped scenario"
 layout: post
-category: Function Parameter, Action Parameter, Un-typed, V5.5
+category: [Operations, Un-typed, V5.5]
 ---
 
 In this page, we introduce the Function/Action parameter in untyped scenario. For CLR typed scenarios, please refer to [Function page](http://odata.github.io/WebApi/Complex-Entity-As-Function-Parameter/) and [Action page](http://odata.github.io/WebApi/Action-Parameter-Support/).
