@@ -1,7 +1,7 @@
 ---
 title : "Abstract entity type without keys & Abstract type without properties & Derived entity type with their own keys"
 layout: post
-category: Entity & complex type enhancement, V5.5
+category: [Entity & complex type enhancement, V5.5]
 ---
 
 Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it is allowed to:
