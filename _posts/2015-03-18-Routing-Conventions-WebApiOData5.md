@@ -2,7 +2,7 @@
 layout: post
 title: "Routing Conventions in Microsoft ASP.NET Web API 2.2 for OData v4.0"
 description: "Routing Conventions"
-category: Routing Conventions
+category: Conventions
 ---
 
 When Web API gets an OData request, it maps the request to a controller name and an action name. The mapping is based on the HTTP method and the URI. For example, GET /odata/Products(1) maps to ProductsController.GetProduct.
