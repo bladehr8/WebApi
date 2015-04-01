@@ -1,7 +1,7 @@
 ---
 title : "Support open type and dynamic property on un-type scenario"
 layout: post
-category: un-type, open-type, V5.5
+category: [Un-typed, Open-type, V5.5]
 ---
 
 Since Web API OData V5.5, it supports open type and dynamic property on un-type scenario, dynamic properties can be:
