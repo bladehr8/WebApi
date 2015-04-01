@@ -2,7 +2,7 @@
 layout: post
 title: "Nested $filter in $expand"
 description: ""
-category: query
+category: Advanced queries
 ---
 
 [OData Web API](https://github.com/OData/WebApi) v[5.5](https://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta) supports nested $filter in $expand, e.g.:
