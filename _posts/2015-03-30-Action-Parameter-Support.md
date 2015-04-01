@@ -1,7 +1,7 @@
 ---
 title : "Support entity and collection of entity as action parameter"
 layout: post
-category: Action Parameter, V5.5
+category: [Operations, V5.5]
 ---
 
 Since [Web API OData V5.5-beta](http://www.nuget.org/packages/Microsoft.AspNet.OData/5.5.0-beta), it supports the following types as action parameter:
